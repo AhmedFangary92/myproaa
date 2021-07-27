@@ -1,12 +1,12 @@
-from rest_framework import generics
-from todolist import models
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from todolist.models import List
 from .serializers import TodoListSerializer
 
-class TodoListApi(generics.ListCreateAPIView):
-    queryset = models.List.objects.all()
+class TodoListApi(ListCreateAPIView):
+    queryset = List.objects.all()
     serializer_class = TodoListSerializer
 
 
-class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.List.objects.all()
+class ItemDetail(RetrieveUpdateDestroyAPIView):
+    queryset = List.objects.all()
     serializer_class = TodoListSerializer
