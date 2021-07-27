@@ -1,18 +1,15 @@
 # get data from models --> json
 
 from rest_framework import serializers
-from todolist import models
+from todolist.models import List
 
 
 class TodoListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.List
-        fields = '__all__'
-
-'''
         fields = (
             'id',
             'item',
             'completed',
         )
-'''
+        model = List
+        # fields = '__all__'
