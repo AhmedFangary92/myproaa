@@ -22,4 +22,5 @@ import todolist
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todolist.urls')),
+    path('apis/v1/', include('apis.urls')),
 ]
